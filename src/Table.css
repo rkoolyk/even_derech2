@@ -1,9 +1,16 @@
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid white;
     border-collapse: collapse;
 }
 
 table.center {
     margin-left: auto;
     margin-right: auto;
+    font-size: 18px;
+    width: 750px;
+    height: 200px;
+}
+
+.Table {
+    color: aquamarine;
 }

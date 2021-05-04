@@ -13,15 +13,40 @@ code {
 }
 
 .grid-container {
+  height: 100vh;
   display: grid;
   grid-template-columns: auto auto;
-  background-color: #2196F3;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 10px;
 }
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+
+.grid-item-graph{
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  width: 850px;
+  height: 250px;
+}
+.grid-item-list{
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  width: 300px;
+  height: 250px;
+}
+.grid-item-table{
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  width: 850px;
+  height: 250px;
+}
+.grid-item-dropoff{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 50px;
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
 }

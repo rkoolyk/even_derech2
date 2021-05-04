@@ -1,11 +1,10 @@
-import './Graph.css';
+import './Graph.css'
 
 export function Graph() {
-    return (
-        <div className="Graph-rectangle">
-
-        </div>
-    );
+   return(
+       <label>HELLO</label>
+   );
 }
+
 
 export default Graph;

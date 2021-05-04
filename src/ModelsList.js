@@ -1,39 +1,33 @@
 import './ModelsList.css';
-
-
-    function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-    }
+import ListBox from 'react-listbox';
+import 'react-listbox/dist/react-listbox.css';
 
 export function ModelsList() {
     return (
-        <input type="text" id="myInput" onKeyUp="myFunction()" placeholder="Search for names.." title="Type in a name">
-            <ul id="myUL">
-                <li><a href="#">Adele</a></li>
-                <li><a href="#">Agnes</a></li>
-                <li><a href="#">Billy</a></li>
-                <li><a href="#">Bob</a></li>
-                <li><a href="#">Calvin</a></li>
-                <li><a href="#">Christina</a></li>
-                <li><a href="#">Cindy</a></li>
-            </ul>
-        </input>
+        <body>
+        <label className="CarsLabel">Please select a model:</label>
+        <br>
+            </br>
+        <select className="Cars" size="5" multiple="multiple">
+            <option value="Merceders"> Merceders </option>
+            <option value="BMW"> BMW </option>
+            <option value="Jaguar"> Jaguar </option>
+            <option value="Lamborghini"> Lamborghini </option>
+            <option value="Ferrari"> Ferrari </option>
+            <option value="Ford"> Ford </option>
+        </select>
+        </body>
     );
 }
+//     const people = [
+//         {label: 'Rachel', value:'1'},
+//         {label: 'Roni', value:'2'},
+//         {label: 'Dina', value:'3'},
+//         {label: 'Becca', value:'4'},
+//     ];
+//     return (
+//     <ListBox people={people}/>
+//     );
+// }
 
 export default ModelsList;
