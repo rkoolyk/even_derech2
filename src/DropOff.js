@@ -11,7 +11,7 @@ function create2dArr(rows, cols) {
     }
     return array;
 }
-
+//given string of csv file, split it into dictionary where keys are titles and values are columns
 function parseCSV(file) {
     const data = file.split("\n").map(function(row){return row.split(",");});
     const headers = data[0]; //array of titles to be made keys
@@ -21,66 +21,16 @@ function parseCSV(file) {
     for (let i = 1; i < data.length; i++) {
         array[i - 1] = data[i];
     }
-    for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < headers.length; j++) {
-            document.write("ARRAY: " + array[i][j]);
-        }
-    }
-
-
-
-    // headers.forEach(function(d) {
-    //     dict.push(d, []);
-    //     //myObject[d] = [];
-    // });
-
+    //document.write(array.toString());
+    let colArray = create2dArr(headers.length, data.length - 1);
     for (let i = 0; i < headers.length; i++) {
-        let col = [];
-        for (let j = 1; j < data.length; j++) {
-         //  document.write("HELLO");
-        //     document.write(data[i][j]);
-            dict[i].push(data[i][j]);
-
+        for (let j = 0; j < array.length; j++) {
+            colArray[i][j] = array[j][i];
         }
     }
-
-   // document.write(dict.toString());
-
-
-
-    // data.forEach(function(d) {
-    //     for (let key in d) {
-    //         //document.write("D[KEY] is:  " + d[key] + "     ");
-    //        // dict[key].push(d[key]);
-    //     }
-    //
-    // });
-        //document.write("d is: " + d + "\n");
-        // for(let i = 0; i < data.length; i++) {
-        //     document.write("d[i] is: " + d[i]);
-        // }
-
-
-    //document.write(dict.toString());
-
-
-    //document.write(headers);
-
-    // const dict = []; // create an empty array
-    // for (let i = 0; i < headers.size; i++) {
-    //     dict.push({
-    //         key:  headers[i],
-    //         value: []
-    //     });
-    //     document.write(dict[i]);
-    // }
-
-
-
-    // const csv = require('csv');
-    // csv.parse(file, {columns: true}, function(err, data){
-    //     document.write(JSON.stringify(data, null, 2));
-    // });
+    for (let i = 0; i < headers.length; i++) {
+       dict[headers[i]] = colArray[i]; //put keys and values into dictionary
+    }
 }
 
 
