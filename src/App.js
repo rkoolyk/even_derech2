@@ -2,8 +2,9 @@ import './App.css';
 import {Graph} from './Graph';
 import {Table} from './Table';
 import {ModelsList} from './ModelsList';
-import {DropOff} from './DropOff'
-import React from 'react'
+import {DropOff} from './DropOff';
+import {ImportFromFileBodyComponent} from "./DropOff";
+import React from 'react';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
               <Table/>
           </div>
           <div className="grid-item-dropoff">
-              <DropOff/>
+              <ImportFromFileBodyComponent/>
           </div>
       </div>
   );
