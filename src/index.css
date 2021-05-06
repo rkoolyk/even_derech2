@@ -50,3 +50,8 @@ code {
   width: 200px;
   height: 100px;
 }
+
+.inner-grid {
+  background-color: green;
+  height: 250px;
+}

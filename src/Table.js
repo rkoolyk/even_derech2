@@ -1,32 +1,34 @@
 import './Table.css';
+import React, { Component } from 'react';
 
-export function Table() {
-    return (
-        <div className="Table">
-            <table className="center">
+export class Table extends Component {
+    render() {
+        const heading = this.props.heading;
+        const body = this.props.body;
+        return (
+            <table style={{ width: 500 }}>
+                <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
+                    {heading.map(head => <th>{head}</th>)}
                 </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>80</td>
-                </tr>
+                </thead>
+                <tbody>
+                {body.map(row => <TableRow row={row} />)}
+                </tbody>
             </table>
-        </div>
-    );
+        );
+    }
+}
+
+class TableRow extends Component {
+    render() {
+        const row = this.props.row;
+        return (
+            <tr>
+                {row.map(val => <td>{val}</td>)}
+            </tr>
+        )
+    }
 }
 
 export default Table;
